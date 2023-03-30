@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  has_many :comments
-  has_many :likes
+  has_many :comments, foreign_key: 'author_id'
+  has_many :likes, foreign_key: 'author_id'
   has_many :posts, foreign_key: 'author_id'
   validates :photo, format: {
     with: %r{\Ahttps?://(?:www\.)?(?:unsplash\.com|.*unsplash\.com)/photos/.*(?:\.(?:png|jpe?g|gif))?\z}i,
