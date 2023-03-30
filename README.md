@@ -72,7 +72,7 @@ To get a local copy up and running, follow these steps.
 In order to run this project you need:
 
 - [Ruby](https://www.ruby-lang.org/en/) installed and running
-- [SQLite3](https://www.sqlite.org/index.html) installed
+- [PostgreSQL](https://www.postgresql.org/) installed
 - [RubyonRails](https://rubyonrails.org/) installed
 
 ### Setup
@@ -80,7 +80,7 @@ In order to run this project you need:
 Clone this repository to your desired folder:
 
 ``` bash
-git@github.com:dgcuenca/Blog-app.git
+git clone git@github.com:dgcuenca/Blog-app.git
 ```
 and then move to the folder: 
 
