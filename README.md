@@ -103,7 +103,7 @@ bundle install
 To run the project, execute the following command:
 
 ```bash
-ruby main.rb
+rails server
 ```
 
 ### Run tests
@@ -136,7 +136,9 @@ You can deploy this project using:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[TBD]**
+- [ ] **[Optimized Database]**
+- [ ] **[Better UI Experience]**
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
