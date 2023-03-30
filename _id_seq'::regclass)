@@ -1,0 +1,9 @@
+                                          Table "public.comments"
+   Column   |              Type              | Collation | Nullable |               Default                
+------------+--------------------------------+-----------+----------+--------------------------------------
+ id         | bigint                         |           | not null | nextval('comments_id_seq'::regclass)
+ created_at | timestamp(6) without time zone |           | not null | 
+ updated_at | timestamp(6) without time zone |           | not null | 
+Indexes:
+    "comments_pkey" PRIMARY KEY, btree (id)
+
