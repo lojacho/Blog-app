@@ -29,3 +29,4 @@ first_post.recent_comments
 
 To check that methods in user are working properly
 first_user.recent_posts
+
