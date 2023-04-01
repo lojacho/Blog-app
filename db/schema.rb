@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_29_132828) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_31_154815) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,6 +20,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_29_132828) do
     t.bigint "user_id", null: false
     t.bigint "post_id", null: false
     t.text "text"
+    t.string "author_type", null: false
+    t.bigint "author_id", null: false
+    t.index ["author_type", "author_id"], name: "index_comments_on_author"
     t.index ["post_id"], name: "index_comments_on_post_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
@@ -39,8 +42,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_29_132828) do
     t.bigint "author_id", null: false
     t.string "title"
     t.text "text"
-    t.integer "comments_counter"
-    t.integer "likes_counter"
+    t.integer "comments_counter", default: 0
+    t.integer "likes_counter", default: 0
     t.index ["author_id"], name: "index_posts_on_author_id"
   end
 
@@ -50,7 +53,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_29_132828) do
     t.string "name"
     t.string "photo"
     t.text "bio"
-    t.integer "posts_counter"
+    t.integer "posts_counter", default: 0
   end
 
   add_foreign_key "comments", "posts"
