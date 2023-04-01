@@ -27,7 +27,7 @@ RSpec.describe Post, type: :model do
     end
   end
 
-  describe '#update_user_posts_counter' do
+  describe '#Methods functionality' do
     it 'updates the number of post by author' do
       expect do
         subject.update_user_posts_counter

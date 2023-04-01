@@ -1,7 +1,4 @@
 require 'rails_helper'
-require_relative '../app/models/post'
-require_relative '../app/models/user'
-require_relative '../app/models/like'
 
 RSpec.describe Like, type: :model do
   let(:first_user) { User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.') }
