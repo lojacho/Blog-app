@@ -14,43 +14,44 @@
  *= require_self
  */
 .user-container {
-    display: flex;
-    margin: 1rem 2rem;
-    gap: 1.5rem;
-
+  display: flex;
+  margin: 1rem 2rem;
+  gap: 1.5rem;
 }
 
 .user-picture-container {
-    height: 10rem;
-    width: 10rem;
+  height: 10rem;
+  width: 10rem;
 }
 
 img {
-    height: 100%;
-    width: 100%;
+  height: 100%;
+  width: 100%;
 }
 
 .user-info {
-    display: flex;
-    gap: 3rem;
-    flex-grow: 1;
-    justify-content: space-between;
+  display: flex;
+  gap: 3rem;
+  flex-grow: 1;
+  justify-content: space-between;
 }
 
 .user-link {
-    font-size: 2rem;
-    font-weight: bold;
-    align-self: center;
+  font-size: 2rem;
+  font-weight: bold;
+  align-self: center;
 }
 
 .user-detail {
-    align-self: flex-end;
+  align-self: flex-end;
 }
 
 .user-bio,
 .user-posts,
-.all-posts {
-    margin: 1rem 2rem
+.all-posts, 
+.post-detailed,
+.post-comments {
+  margin: 1rem 2rem;
 }
 
 .user-posts {
@@ -67,3 +68,10 @@ img {
   display: flex;
   justify-content: center;
 }
+
+.post-counters-detailed {
+    display: flex;
+    justify-content: end;
+    margin-top: -1.5rem;
+    margin-bottom: -1.5rem;
+  }
