@@ -13,3 +13,36 @@
  *= require_tree .
  *= require_self
  */
+.user-container {
+    display: flex;
+    margin: 1rem 2rem;
+    gap: 1.5rem;
+
+}
+
+.user-picture-container {
+    height: 10rem;
+    width: 10rem;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+}
+
+.user-info {
+    display: flex;
+    gap: 3rem;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.user-name {
+    font-size: 2rem;
+    font-weight: bold;
+    align-self: center;
+}
+
+.user-detail {
+    align-self: flex-end;
+}
