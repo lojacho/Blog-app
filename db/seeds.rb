@@ -17,4 +17,19 @@ users = [
 users.each do |user|
     User.create(user)
 end
-  
+
+user = User.find_by(name: 'Tanjiro Kamado')
+
+posts = [
+    { author: user, title: 'My first battle', text: 'This battle was agains my own sister that was converted to demon' },
+    { author: user, title: 'My train journay', text: 'A old and frindly guy teach me to fight and breath' },
+    { author: user, title: 'My 3er post', text: 'A old and frindly guy teach me to fight and breath' },
+    { author: user, title: 'This is the last that has to apper in preview', text: 'A old and frindly guy teach me to fight and breath' },
+    { author: user, title: 'My before last one post ', text: 'A old and frindly guy teach me to fight and breath' },
+    { author: user, title: 'My Last one post', text: 'A old and frindly guy teach me to fight and breath' }
+
+]
+
+posts.each do |post|
+    Post.create(post)
+end
