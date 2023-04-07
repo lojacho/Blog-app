@@ -37,14 +37,14 @@ end
 post = Post.find_by(title: 'My Last one post')
 
 comments = [
-    { post: post, user_id: user.id, text: 'This is the first comment for My Last one post', author_id: user.id, author_type: 'User'},
-    { post: post, user_id: user.id, text: 'This is the second comment for My Last one post', author_id: user.id, author_type: 'User'},
-    { post: post, user_id: user.id, text: 'This is the third comment for My Last one post', author_id: user.id, author_type: 'User'},
-    { post: post, user_id: user.id, text: 'This is the fourth comment for My Last one post', author_id: user.id, author_type: 'User'},
-    { post: post, user_id: user.id, text: 'This is the fifth comment for My Last one post', author_id: user.id, author_type: 'User'},
-    { post: post, user_id: user.id, text: 'This is the sixth comment for My Last one post', author_id: user.id, author_type: 'User'},
-    { post: post, user_id: user.id, text: 'This is the seventh comment for My Last one post', author_id: user.id, author_type: 'User'},
-    { post: post, user_id: user.id, text: 'This is the eighth comment for My Last one post', author_id: user.id, author_type: 'User'},
+    { post: post, user_id: user.id, text: 'This is the first comment for My Last one post', author_id: user.id, author_type: user},
+    { post: post, user_id: user.id, text: 'This is the second comment for My Last one post', author_id: user.id, author_type: user},
+    { post: post, user_id: user.id, text: 'This is the third comment for My Last one post', author_id: user.id, author_type: user},
+    { post: post, user_id: user.id, text: 'This is the fourth comment for My Last one post', author_id: user.id, author_type: user},
+    { post: post, user_id: user.id, text: 'This is the fifth comment for My Last one post', author_id: user.id, author_type: user},
+    { post: post, user_id: user.id, text: 'This is the sixth comment for My Last one post', author_id: user.id, author_type: user},
+    { post: post, user_id: user.id, text: 'This is the seventh comment for My Last one post', author_id: user.id, author_type: user},
+    { post: post, user_id: user.id, text: 'This is the eighth comment for My Last one post', author_id: user.id, author_type: user},
 
 ]
 

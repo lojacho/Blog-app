@@ -5,5 +5,7 @@ class PostsController < ApplicationController
   end
 
   # Renders the default view for the show action.
-  def show; end
+  def show
+    @post = Post.find(request.params['id'])
+  end
 end

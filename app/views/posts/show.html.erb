@@ -1,2 +1,9 @@
-<h1>Post</h1>
-<p>Here is a post</p>
+<%= @post.title %>
+ <div >
+                <% @post.comments.each do |comment| %>
+              <p>
+                <%= User.find(comment.author_id).name%>
+                 <%= comment.text %>
+               <% end %>
+              </p>
+</div>
