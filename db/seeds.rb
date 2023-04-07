@@ -21,15 +21,33 @@ end
 user = User.find_by(name: 'Tanjiro Kamado')
 
 posts = [
-    { author: user, title: 'My first battle', text: 'This battle was agains my own sister that was converted to demon' },
-    { author: user, title: 'My train journay', text: 'A old and frindly guy teach me to fight and breath' },
-    { author: user, title: 'My 3er post', text: 'A old and frindly guy teach me to fight and breath' },
-    { author: user, title: 'This is the last that has to apper in preview', text: '3re A old and frindly guy teach me to fight and breath' },
-    { author: user, title: 'My before last one post ', text: 'This is my second new post' },
+    { author: user, title: 'My first post', text: 'This battle was agains my own sister that was converted to demon' },
+    { author: user, title: 'My second post', text: 'A old and frindly guy teach me to fight and breath' },
+    { author: user, title: 'My third post', text: 'A old and frindly guy teach me to fight and breath' },
+    { author: user, title: 'My third to last post', text: '3re A old and frindly guy teach me to fight and breath' },
+    { author: user, title: 'My second to last post', text: 'This is my second new post' },
     { author: user, title: 'My Last one post', text: 'My last fight again a demon was with my friends' }
 
 ]
 
 posts.each do |post|
     Post.create(post)
+end
+
+post = Post.find_by(title: 'My Last one post')
+
+comments = [
+    { post: post, user_id: user.id, text: 'This is the first comment for My Last one post', author_id: user.id, author_type: 'User'},
+    { post: post, user_id: user.id, text: 'This is the second comment for My Last one post', author_id: user.id, author_type: 'User'},
+    { post: post, user_id: user.id, text: 'This is the third comment for My Last one post', author_id: user.id, author_type: 'User'},
+    { post: post, user_id: user.id, text: 'This is the fourth comment for My Last one post', author_id: user.id, author_type: 'User'},
+    { post: post, user_id: user.id, text: 'This is the fifth comment for My Last one post', author_id: user.id, author_type: 'User'},
+    { post: post, user_id: user.id, text: 'This is the sixth comment for My Last one post', author_id: user.id, author_type: 'User'},
+    { post: post, user_id: user.id, text: 'This is the seventh comment for My Last one post', author_id: user.id, author_type: 'User'},
+    { post: post, user_id: user.id, text: 'This is the eighth comment for My Last one post', author_id: user.id, author_type: 'User'},
+
+]
+
+comments.each do |comment|
+    Comment.create(comment)
 end
