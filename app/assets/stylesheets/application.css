@@ -46,3 +46,24 @@ img {
 .user-detail {
     align-self: flex-end;
 }
+
+.user-bio,
+.user-posts,
+.all-posts {
+    margin: 1rem 2rem
+}
+
+.user-posts {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-counters {
+  display: flex;
+  justify-content: end;
+}
+
+.all-posts {
+  display: flex;
+  justify-content: center;
+}

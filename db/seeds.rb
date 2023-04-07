@@ -24,9 +24,9 @@ posts = [
     { author: user, title: 'My first battle', text: 'This battle was agains my own sister that was converted to demon' },
     { author: user, title: 'My train journay', text: 'A old and frindly guy teach me to fight and breath' },
     { author: user, title: 'My 3er post', text: 'A old and frindly guy teach me to fight and breath' },
-    { author: user, title: 'This is the last that has to apper in preview', text: 'A old and frindly guy teach me to fight and breath' },
-    { author: user, title: 'My before last one post ', text: 'A old and frindly guy teach me to fight and breath' },
-    { author: user, title: 'My Last one post', text: 'A old and frindly guy teach me to fight and breath' }
+    { author: user, title: 'This is the last that has to apper in preview', text: '3re A old and frindly guy teach me to fight and breath' },
+    { author: user, title: 'My before last one post ', text: 'This is my second new post' },
+    { author: user, title: 'My Last one post', text: 'My last fight again a demon was with my friends' }
 
 ]
 

@@ -5,5 +5,7 @@ class UsersController < ApplicationController
   end
 
   # Renders the default view for the show action.
-  def show; end
+  def show
+    @user = User.find(request.params['id'])
+  end
 end
