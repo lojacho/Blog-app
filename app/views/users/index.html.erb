@@ -6,8 +6,8 @@
               <img src="<%= user.photo %>" alt="user.name">
             </div>
             <div class = "user-info">
-                <p class = user-name><%= user.name %></p>
-                <p class = user-detail> Number of post: <%= user.bio %></p>
+                <%= link_to user.name, user_path(user), class:"user-link" %>
+                <p class = user-detail> Number of post: <%= user.posts.count %></p>
             </div>
         </li>
     <% end %>
