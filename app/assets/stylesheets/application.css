@@ -48,7 +48,7 @@ img {
 
 .user-bio,
 .user-posts,
-.all-posts, 
+.all-posts,
 .post-detailed,
 .post-comments {
   margin: 1rem 2rem;
@@ -70,8 +70,8 @@ img {
 }
 
 .post-counters-detailed {
-    display: flex;
-    justify-content: end;
-    margin-top: -1.5rem;
-    margin-bottom: -1.5rem;
-  }
+  display: flex;
+  justify-content: end;
+  margin-top: -1.5rem;
+  margin-bottom: -1.5rem;
+}
