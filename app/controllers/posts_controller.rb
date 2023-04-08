@@ -1,3 +1,4 @@
+#require 'Pry'
 class PostsController < ApplicationController
   # Renders the default view for the index action.
   def index
@@ -16,7 +17,13 @@ class PostsController < ApplicationController
 
   def create
     @current_user = current_user
-    @post = @current_user.posts.new(post_params)
+    @post = @current_user.posts.build(post_params)
+#binding.pry
+    if @post.save
+      redirect_to user_posts_path(@current_user), flash: { notice: 'Post was successfully created.' }
+    else
+      render :new
+    end
   end
 
   private
@@ -24,5 +31,4 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :text)
   end
-
 end
