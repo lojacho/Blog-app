@@ -20,7 +20,7 @@ class PostsController < ApplicationController
     @post = @current_user.posts.build(post_params)
 #binding.pry
     if @post.save
-      redirect_to user_posts_path(@current_user), flash: { notice: 'Post was successfully created.' }
+      redirect_to user_posts_path(@current_user)
     else
       render :new
     end
