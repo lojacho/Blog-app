@@ -16,6 +16,11 @@
             <h2 class = "post-title">
               <%= link_to post.title, user_post_path(@user, post)%>
             </h2>
+            <div> 
+            <%= form_with(model: @like, url: user_post_likes_path(user_id: @user.id, post_id: post), method: :post) do |f| %>
+            <%= f.submit 'Like' %>
+            <% end %>
+            </div>
             <p class = "post-content">
               <%= post.text %>
             </p>
