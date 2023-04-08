@@ -17,6 +17,9 @@
 
     <%= @user.bio%>
 </p>
+<div class="add-post">
+	<button type="button" ><%= link_to "Add a Post", new_user_post_path(@user)%></button>
+</div>
 <ul  class = "user-posts">
      <% @user.recent_posts.each do |post| %>
         <li class = "post-container">
