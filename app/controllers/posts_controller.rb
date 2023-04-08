@@ -8,6 +8,7 @@ class PostsController < ApplicationController
   # Renders the default view for the show action.
   def show
     @post = Post.find(request.params['id'])
+    @current_user = current_user
   end
 
   def new
@@ -17,7 +18,7 @@ class PostsController < ApplicationController
 
   def create
     @current_user = current_user
-    @post = @current_user.posts.build(post_params)
+    @post = @current_user.posts.create(post_params)
 #binding.pry
     if @post.save
       redirect_to user_posts_path(@current_user)
