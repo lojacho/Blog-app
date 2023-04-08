@@ -1,14 +1,13 @@
 class LikesController < ApplicationController
-  def new
-    @like = Like.new
-  end
 
   def create
     @current_user = current_user
     @like = Like.new(like_params)
-    return unless @like.save
-
-    redirect_to user_posts_path(@current_user)
+    if @like.save
+      redirect_to user_posts_path(@current_user)
+    else
+      format.html { redirect_to @post }
+    end
   end
 
   def like_params
