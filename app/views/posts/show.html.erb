@@ -17,6 +17,9 @@
     <p>
       <%= @post.text %>
     </p>
+    <div class="add-comment">
+	    <button type="button" ><%= link_to "Add a comment", new_user_post_comment_path(@current_user, @post) %></button>
+    </div>
   </div>
   <div class = "post-comments">
     <% @post.comments.each do |comment| %>

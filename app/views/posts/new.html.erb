@@ -1,0 +1,8 @@
+<h1>Create a new post </h1>
+<div>
+<%= form_with model: @post, url: user_posts_path, method: :post, local: true do |f|%>
+    Tittle: <%= f.text_field  :title %>
+    Text: <%= f.text_area :text %>
+    <%= f.submit %>
+<%end%>
+</div>
