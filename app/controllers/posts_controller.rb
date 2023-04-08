@@ -1,4 +1,4 @@
-#require 'Pry'
+# require 'Pry'
 class PostsController < ApplicationController
   # Renders the default view for the index action.
   def index
@@ -19,7 +19,7 @@ class PostsController < ApplicationController
   def create
     @current_user = current_user
     @post = @current_user.posts.create(post_params)
-#binding.pry
+    # binding.pry
     if @post.save
       redirect_to user_posts_path(@current_user)
     else
