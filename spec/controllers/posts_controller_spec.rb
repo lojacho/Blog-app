@@ -14,7 +14,7 @@ RSpec.describe PostsController, type: :request do
 
     it 'displays the correct heading' do
       get '/users/1/posts'
-      expect(response.body).to include('Posts')
+      expect(response.body).to include('Tanjiro Kamado')
     end
   end
 
@@ -31,7 +31,7 @@ RSpec.describe PostsController, type: :request do
 
     it 'displays the correct heading' do
       get '/users/1/posts/1'
-      expect(response.body).to include('Post')
+      expect(response.body).to include('This battle was agains my own sister that was converted to demon')
     end
   end
 end

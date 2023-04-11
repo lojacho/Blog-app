@@ -14,7 +14,7 @@ RSpec.describe UsersController, type: :request do
 
     it 'displays the correct heading' do
       get '/users'
-      expect(response.body).to include('Users')
+      expect(response.body).to include('Tanjiro Kamado')
     end
   end
 
@@ -31,7 +31,7 @@ RSpec.describe UsersController, type: :request do
 
     it 'displays the correct heading' do
       get '/users/1'
-      expect(response.body).to include('User')
+      expect(response.body).to include('Tanjiro Kamado')
     end
   end
 end
