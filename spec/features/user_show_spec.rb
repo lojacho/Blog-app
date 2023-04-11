@@ -2,12 +2,17 @@ require 'rails_helper'
 
 RSpec.describe 'users/show.html.erb', type: :feature do
   before(:each) do
-    @user = User.create(name: 'Tanjiro Kamado', photo: 'https://static.zerochan.net/Kamado.Tanjirou.full.2705519.jpg', bio: 'Friendly guy that leaves as a demon slayer.')
-    @post = Post.create(author: @user, title: 'My first post', text: 'This battle was agains my own sister that was converted to demon')
-    @post2 = Post.create(author: @user, title: 'My second post', text: 'This battle was agains my own sister that was converted to demon')
-    @post3 = Post.create(author: @user, title: 'My third post', text: 'This battle was agains my own sister that was converted to demon')
-    @comment = Comment.create(author: @user, post: @post, text: 'Lorem ipsum', user_id: @user.id, author_id: @user.id, author_type: 'user')
-    @like2 = Like.create(user: @user, post: @post)
+    @user = User.create(name: 'Tanjiro Kamado', photo: 'https://static.zerochan.net/Kamado.Tanjirou.full.2705519.jpg',
+                        bio: 'Friendly guy that leaves as a demon slayer.')
+    @post = Post.create(author: @user, title: 'My first post', text: 'no view')
+    @post2 = Post.create(author: @user, title: 'My second post',
+                         text: 'This battle was agains my own sister that was converted to demon')
+    @post3 = Post.create(author: @user, title: 'My third post',
+                         text: 'This battle was agains my own sister that was converted to demon')
+    @post4 = Post.create(author: @user, title: 'My third post',
+                         text: 'This battle was agains my own sister that was converted to demon')
+    @comment = Comment.create(author: @user, post: @post, text: 'Lorem ipsum', user_id: @user.id, author_id: @user.id,
+                              author_type: 'user')
     visit user_path(@user)
   end
 
@@ -28,9 +33,10 @@ RSpec.describe 'users/show.html.erb', type: :feature do
   end
 
   it 'shows the first 3 posts' do
-    expect(page).to have_content(@post.text)
     expect(page).to have_content(@post2.text)
     expect(page).to have_content(@post3.text)
+    expect(page).to have_content(@post4.text)
+    expect(page).to_not have_content(@post.text)
   end
 
   it 'shows the all posts button' do
