@@ -21,7 +21,9 @@
             <%= f.submit 'Like' %>
             <% end %>
             </div>
-              <%= link_to "Delete", user_post_path(@user, post), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }%>
+              <% if can? :delete, @post %>
+              <%= link_to "Delete Post", user_post_path(@user, post), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }%> 
+              <% end %>
             <div>
             </div>
             <p class = "post-content">

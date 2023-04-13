@@ -9,13 +9,5 @@ class UsersController < ApplicationController
   def show
     @user = User.find(request.params['id'])
   end
-
-  def admin?
-    @user.role == "admin"
-  end
-
-  def present?
-    self == current_user
-  end
   
 end
