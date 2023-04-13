@@ -67,4 +67,14 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
+
+  #devise configuration manual add it
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.delivery_method = :smtp
+  #SMTP settings for mailcatcher gem
+  config.action_mailer.smtp_settings = {
+  address: '127.0.0.1',
+  port: 1025
+ }
+
 end

@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
   # Renders the default view for the index action.
   def index
     @users = User.all
