@@ -70,4 +70,11 @@ Rails.application.configure do
 
   #devise configuration manual add it
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.delivery_method = :smtp
+  #SMTP settings for mailcatcher gem
+  config.action_mailer.smtp_settings = {
+  address: '127.0.0.1',
+  port: 1025
+ }
+
 end
