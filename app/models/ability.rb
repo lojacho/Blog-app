@@ -28,5 +28,18 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/blob/develop/docs/define_check_abilities.md
+
+    user ||= User.new
+    # if user.role == admin
+    # else
+    # end
+    can :read, Post
+
+    return unless user.present?  # additional permissions for logged in users (they can read their own posts)
+    can :delete, Post, user: user
+
+    return unless user.admin?  # additional permissions for administrators
+    can :delete, Post
+
   end
 end
