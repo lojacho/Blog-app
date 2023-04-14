@@ -1,4 +1,6 @@
 class Api::CommentsController < ApplicationController
+  protect_from_forgery with: :null_session
+
   def index
     @post = Post.find(request.params['post_id'])
     render :json => @post.comments.all
@@ -10,7 +12,7 @@ class Api::CommentsController < ApplicationController
 
     @user = User.find(comment_params[:user_id])
     @post = Post.find(comment_params[:post_id])
-    @comment = @post.comments.create(comment_params[:text])
+    @comment = @post.comments.create(comment_params)
     @comment.author = @user
     @comment.user_id = @user.id
     @comment.author_type = 'User'
