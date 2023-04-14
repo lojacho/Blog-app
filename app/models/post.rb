@@ -16,4 +16,10 @@ class Post < ApplicationRecord
   def recent_comments
     comments.order(created_at: :desc).limit(5)
   end
+
+   # Option 2: Working with the default #as_json method
+   def as_json(options={})
+    super({ only: [:title, :text] }.merge(options))
+  end
+
 end

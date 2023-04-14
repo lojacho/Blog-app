@@ -12,12 +12,9 @@ root "users#index"
     end
   end
   
-  resources :api do
+  namespace :api do
     resources :users do
-      resources :posts do
-        resources :comments
-      end
+      resources :posts
     end
   end
-
 end
