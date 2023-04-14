@@ -39,6 +39,9 @@ class Ability
     can :destroy, Post, :author_id => user.id
     can :read, Post
     can :create, Post
+    can :destroy, Comment, :user_id => user.id
+    can :read, Comment
+    can :create, Comment
 
     return unless user.admin?  # additional permissions for administrators
     can :manage, :all
