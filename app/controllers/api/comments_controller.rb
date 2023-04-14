@@ -3,7 +3,7 @@ class Api::CommentsController < ApplicationController
 
   def index
     @post = Post.find(request.params['post_id'])
-    render :json => @post.comments.all
+    render json: @post.comments.all
   end
 
   def create
@@ -17,9 +17,9 @@ class Api::CommentsController < ApplicationController
     @comment.user_id = @user.id
     @comment.author_type = 'User'
     if @comment.save
-      render :json => {"status": 'Siuuuuuuuuuuuu'}
+      render json: { status: 'Siuuuuuuuuuuuu' }
     else
-      render :json => {"status": 'Nou'}
+      render json: { status: 'Nou' }
     end
   end
 end

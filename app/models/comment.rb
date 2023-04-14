@@ -6,10 +6,10 @@ class Comment < ApplicationRecord
 
   def update_post_comments_counter
     post.update(comments_counter: post.comments.count)
-  end  
+  end
 
   # Option 2: Working with the default #as_json method
-  def as_json(options={})
-   super({ only: [:text, :author_id, :post_id] }.merge(options))
- end
+  def as_json(options = {})
+    super({ only: %i[text author_id post_id] }.merge(options))
+  end
 end

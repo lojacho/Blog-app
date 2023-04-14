@@ -21,5 +21,4 @@ class User < ApplicationRecord
   def present?
     role == 'user'
   end
-
 end
