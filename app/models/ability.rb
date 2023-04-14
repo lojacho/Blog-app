@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Ability
   include CanCan::Ability
 
@@ -33,18 +31,18 @@ class Ability
 
     # can :read, Post
 
-    #return unless user.present?  # additional permissions for logged in users (they can read their own posts)
-    #can :destroy, Post, user: user
-    
-    can :destroy, Post, :author_id => user.id
+    # return unless user.present?  # additional permissions for logged in users (they can read their own posts)
+    # can :destroy, Post, user: user
+
+    can :destroy, Post, author_id: user.id
     can :read, Post
     can :create, Post
-    can :destroy, Comment, :user_id => user.id
+    can :destroy, Comment, user_id: user.id
     can :read, Comment
     can :create, Comment
 
-    return unless user.admin?  # additional permissions for administrators
-    can :manage, :all
+    return unless user.admin? # additional permissions for administrators
 
+    can :manage, :all
   end
 end

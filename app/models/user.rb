@@ -15,12 +15,10 @@ class User < ApplicationRecord
   end
 
   def admin?
-    role == "admin"
+    role == 'admin'
   end
 
   def present?
-    role == "user"
+    role == 'user'
   end
-
 end
-
