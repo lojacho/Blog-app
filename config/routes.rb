@@ -12,4 +12,12 @@ root "users#index"
     end
   end
   
+  resources :api do
+    resources :users do
+      resources :posts do
+        resources :comments
+      end
+    end
+  end
+
 end
