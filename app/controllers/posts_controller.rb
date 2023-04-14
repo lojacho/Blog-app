@@ -1,5 +1,5 @@
-# require 'Pry'
 class PostsController < ApplicationController
+  load_and_authorize_resource
   # Renders the default view for the index action.
   def index
     @user = User.find(request.params['user_id'])
@@ -19,12 +19,19 @@ class PostsController < ApplicationController
   def create
     @current_user = current_user
     @post = @current_user.posts.create(post_params)
-    # binding.pry
     if @post.save
       redirect_to user_posts_path(@current_user)
     else
       render :new
     end
+  end
+
+  def destroy
+    puts 'DESTROY POST'
+    @post = Post.find(params[:id])
+    @user = User.find(params[:user_id])
+    @post.destroy
+    redirect_to user_posts_path(@user)
   end
 
   private
