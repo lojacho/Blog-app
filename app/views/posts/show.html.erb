@@ -22,9 +22,9 @@
     </div>
   </div>
   <div class = "post-comments">
-    <% @post.comments.each do |comment| %>
+    <% @post.comments.includes(:author).each do |comment| %>
     <li>
-      <%= User.find(comment.author_id).name%>:
+      <%= comment.author.name%>:
       <%= comment.text %>
 
       <% if can? :destroy, comment %>
