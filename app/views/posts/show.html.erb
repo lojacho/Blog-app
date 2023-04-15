@@ -24,7 +24,7 @@
   <div class = "post-comments">
     <% @post.comments.each do |comment| %>
     <li>
-      <%= User.find(comment.author_id).name%>:
+      <%= comment.author.name%>:
       <%= comment.text %>
       <% end %>
     </li>
