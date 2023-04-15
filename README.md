@@ -130,6 +130,12 @@ You can deploy this project using:
 
 [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/dgcuenca) [![linkedin](https://img.shields.io/badge/dgcuenca-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/dgcuenca)
 
+ **Paul Sáenz Sucre**
+
+- GitHub: [@paulsaenzsucre](https://github.com/paulsaenzsucre)
+- Twitter: [@paulsaenzsucre](https://twitter.com/paulsaenzsucre)
+- LinkedIn: [@paulsaenzsucre](https://www.linkedin.com/in/paulsaenzsucre
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
