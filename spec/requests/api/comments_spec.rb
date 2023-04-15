@@ -1,14 +1,16 @@
 require 'swagger_helper'
 
-RSpec.describe 'api/posts', type: :request do
+RSpec.describe 'api/comments', type: :request do
 
-  path '/api/users/{user_id}/posts' do
+  path '/api/users/{user_id}/posts/{post_id}/comments' do
     # You'll want to customize the parameter types...
     parameter name: 'user_id', in: :path, type: :string, description: 'user_id'
+    parameter name: 'post_id', in: :path, type: :string, description: 'post_id'
 
-    get('list posts') do
+    get('list comments') do
       response(200, 'successful') do
         let(:user_id) { '123' }
+        let(:post_id) { '123' }
 
         after do |example|
           example.metadata[:response][:content] = {
@@ -21,29 +23,10 @@ RSpec.describe 'api/posts', type: :request do
       end
     end
 
-    post('create post') do
+    post('create comment') do
       response(200, 'successful') do
         let(:user_id) { '123' }
-
-        after do |example|
-          example.metadata[:response][:content] = {
-            'application/json' => {
-              example: JSON.parse(response.body, symbolize_names: true)
-            }
-          }
-        end
-        run_test!
-      end
-    end
-  end
-
-  path '/api/users/{user_id}/posts/new' do
-    # You'll want to customize the parameter types...
-    parameter name: 'user_id', in: :path, type: :string, description: 'user_id'
-
-    get('new post') do
-      response(200, 'successful') do
-        let(:user_id) { '123' }
+        let(:post_id) { '123' }
 
         after do |example|
           example.metadata[:response][:content] = {
@@ -57,14 +40,38 @@ RSpec.describe 'api/posts', type: :request do
     end
   end
 
-  path '/api/users/{user_id}/posts/{id}/edit' do
+  path '/api/users/{user_id}/posts/{post_id}/comments/new' do
     # You'll want to customize the parameter types...
     parameter name: 'user_id', in: :path, type: :string, description: 'user_id'
+    parameter name: 'post_id', in: :path, type: :string, description: 'post_id'
+
+    get('new comment') do
+      response(200, 'successful') do
+        let(:user_id) { '123' }
+        let(:post_id) { '123' }
+
+        after do |example|
+          example.metadata[:response][:content] = {
+            'application/json' => {
+              example: JSON.parse(response.body, symbolize_names: true)
+            }
+          }
+        end
+        run_test!
+      end
+    end
+  end
+
+  path '/api/users/{user_id}/posts/{post_id}/comments/{id}/edit' do
+    # You'll want to customize the parameter types...
+    parameter name: 'user_id', in: :path, type: :string, description: 'user_id'
+    parameter name: 'post_id', in: :path, type: :string, description: 'post_id'
     parameter name: 'id', in: :path, type: :string, description: 'id'
 
-    get('edit post') do
+    get('edit comment') do
       response(200, 'successful') do
         let(:user_id) { '123' }
+        let(:post_id) { '123' }
         let(:id) { '123' }
 
         after do |example|
@@ -79,14 +86,16 @@ RSpec.describe 'api/posts', type: :request do
     end
   end
 
-  path '/api/users/{user_id}/posts/{id}' do
+  path '/api/users/{user_id}/posts/{post_id}/comments/{id}' do
     # You'll want to customize the parameter types...
     parameter name: 'user_id', in: :path, type: :string, description: 'user_id'
+    parameter name: 'post_id', in: :path, type: :string, description: 'post_id'
     parameter name: 'id', in: :path, type: :string, description: 'id'
 
-    get('show post') do
+    get('show comment') do
       response(200, 'successful') do
         let(:user_id) { '123' }
+        let(:post_id) { '123' }
         let(:id) { '123' }
 
         after do |example|
@@ -100,9 +109,10 @@ RSpec.describe 'api/posts', type: :request do
       end
     end
 
-    patch('update post') do
+    patch('update comment') do
       response(200, 'successful') do
         let(:user_id) { '123' }
+        let(:post_id) { '123' }
         let(:id) { '123' }
 
         after do |example|
@@ -116,9 +126,10 @@ RSpec.describe 'api/posts', type: :request do
       end
     end
 
-    put('update post') do
+    put('update comment') do
       response(200, 'successful') do
         let(:user_id) { '123' }
+        let(:post_id) { '123' }
         let(:id) { '123' }
 
         after do |example|
@@ -132,9 +143,10 @@ RSpec.describe 'api/posts', type: :request do
       end
     end
 
-    delete('delete post') do
+    delete('delete comment') do
       response(200, 'successful') do
         let(:user_id) { '123' }
+        let(:post_id) { '123' }
         let(:id) { '123' }
 
         after do |example|
